@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Container principal das aulas -->
+<div class="meu_container">
+
+    <!-- Botão para abrir o modal de Nova Aula -->
+    <div class="linha-botao">
+        <button id="btn-nova-aula" class="btn-nova">+ Nova Aula</button>
+    </div>
+
+    <!-- Repete um card para cada aula cadastrada -->
+    {% for aula in aulas %}
+        <div class="meu_card">
+
+            <!-- Exibe os dados da aula -->
+            <h1>{{ aula.titulo }}</h1>
+            <p>Instrutor: {{ aula.instrutor }}</p>
+            <p>Sala: {{ aula.sala }}</p>
+            <p>Horário: {{ aula.horario }}</p>
+            <p>Data: {{ aula.data }}</p>
+
+            <!-- Botão que abre o modal de detalhes -->
+            <button class="btn-detalhes"
+                data-titulo="{{ aula.titulo }}"
+                data-instrutor="{{ aula.instrutor }}"
+                data-sala="{{ aula.sala }}"
+                data-horario="{{ aula.horario }}"
+                data-data="{{ aula.data }}"
+                data-descricao="{{ aula.descricao }}">
+                Detalhes
+            </button>
+
+        </div>
+    {% endfor %}
+
+</div>
+
+<!-- ================= MODAL DETALHES ================= -->
+<div id="modal-detalhes" class="modal">
+    <div class="modal-content">
+
+        <!-- Fecha o modal -->
+        <span class="close-button">&times;</span>
+
+        <!-- Dados preenchidos via JavaScript -->
+        <h2 id="modal-titulo">Título da Aula</h2>
+        <p><strong>Instrutor:</strong> <span id="modal-instrutor"></span></p>
+        <p><strong>Sala:</strong> <span id="modal-sala"></span></p>
+        <p><strong>Horário:</strong> <span id="modal-horario"></span></p>
+        <p><strong>Data:</strong> <span id="modal-data"></span></p>
+        <p><strong>Descrição:</strong> <span id="modal-descricao"></span></p>
+
+        <!-- Botões de ação -->
+        <div class="btn-container">
+
+            <div class="btn-wrapper">
+                <button id="btn-editar" class="btn-acao btn-editar">Editar</button>
+            </div>
+
+            <form method="post" action="/excluir" class="btn-wrapper">
+                <input type="hidden" id="excluir-titulo" name="titulo">
+                <button type="submit" class="btn-acao btn-excluir">Excluir</button>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ================= MODAL NOVA AULA ================= -->
+<div id="modal-nova-aula" class="modal">
+    <div class="modal-content modal-new">
+
+        <span class="close-button">&times;</span>
+        <h2>Nova Aula</h2>
+
+        <form method="post" action="/novo">
+
+            <label>Título</label>
+            <input type="text" name="titulo" placeholder="Informe o nome da aula" required>
+
+            <label>Instrutor</label>
+            <input type="text" name="instrutor" placeholder="Informe o nome do Instrutor" required>
+
+            <label>Data</label>
+            <input type="date" name="data" required>
+
+            <label>Horário</label>
+            <input type="time" name="horario" required>
+
+            <label>Sala</label>
+            <input type="text" name="sala" required>
+
+            <label>Descrição/Conteúdo</label>
+            <textarea name="descricao" rows="4" placeholder="Descreva o conteúdo da aula" required></textarea>
+
+            <button type="submit">Salvar</button>
+        </form>
+
+    </div>
+</div>
+
+
+<!-- ================= MODAL EDITAR AULA ================= -->
+<div id="modal-editar-aula" class="modal">
+    <div class="modal-content">
+
+        <span class="close-button">&times;</span>
+        <h2>Editar Aula</h2>
+
+        <form method="POST" action="/editar">
+
+            <input type="hidden" name="titulo_original" id="editar-titulo-original">
+
+            <label>Título</label>
+            <input type="text" name="titulo" id="editar-titulo" required>
+
+            <label>Instrutor</label>
+            <input type="text" name="instrutor" id="editar-instrutor" required>
+
+            <label>Data</label>
+            <input type="date" name="data" id="editar-data" required>
+
+            <label>Horário</label>
+            <input type="time" name="horario" id="editar-horario" required>
+
+            <label>Sala</label>
+            <input type="text" name="sala" id="editar-sala" required>
+
+            <label>Descrição</label>
+            <textarea name="descricao" id="editar-descricao" rows="4" required></textarea>
+
+            <button type="submit">Salvar Alterações</button>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

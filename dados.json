@@ -1,0 +1,74 @@
+[
+    {
+        "id": 2,
+        "titulo": "Cibersegurança e Proteção de Dados",
+        "instrutor": "Juliana Rocha",
+        "data": "2026-01-18",
+        "sala": "409",
+        "horario": "10:30",
+        "descricao": "Análise de vulnerabilidades, criptografia e melhores práticas de segurança digital."
+    },
+    {
+        "id": 3,
+        "titulo": "Desenvolvimento Web Completo",
+        "instrutor": "Paulo Andrade",
+        "data": "2026-01-20",
+        "sala": "215",
+        "horario": "16:00",
+        "descricao": "HTML5, CSS3, JavaScript moderno e introdução a frameworks como React."
+    },
+    {
+        "id": 4,
+        "titulo": "Banco de Dados e SQL",
+        "instrutor": "Carla Fernandes",
+        "data": "2026-01-22",
+        "sala": "302",
+        "horario": "09:00",
+        "descricao": "Consultas avançadas, modelagem relacional e otimização de desempenho."
+    },
+    {
+        "id": 5,
+        "titulo": "Introdução à Inteligência Artificial",
+        "instrutor": "Eduardo Martins",
+        "data": "2026-01-25",
+        "sala": "108",
+        "horario": "13:30",
+        "descricao": "Fundamentos de IA, redes neurais básicas e aplicações práticas."
+    },
+    {
+        "id": 6,
+        "titulo": "Desenvolvimento Mobile com Flutter",
+        "instrutor": "Bianca Duarte",
+        "data": "2026-01-27",
+        "sala": "204",
+        "horario": "15:00",
+        "descricao": "Criação de apps cross-platform, widgets, navegação e integração com APIs."
+    },
+    {
+        "id": 7,
+        "titulo": "Administração de Redes",
+        "instrutor": "Fernando Ribeiro",
+        "data": "2026-01-30",
+        "sala": "410",
+        "horario": "08:30",
+        "descricao": "Infraestrutura de redes, protocolos, roteamento e configuração de dispositivos."
+    },
+    {
+        "id": 8,
+        "titulo": "Uy/UI Design para Iniciantes",
+        "instrutor": "Larissa Almeida",
+        "data": "2026-02-02",
+        "sala": "117",
+        "horario": "11:00",
+        "descricao": "Princípios de design, prototipação no Figma e criação de interfaces modernas."
+    },
+    {
+        "id": 9,
+        "titulo": "Análise de Dados com Power BI",
+        "instrutor": "Marcelo Vieira",
+        "data": "2026-02-05",
+        "sala": "201",
+        "horario": "14:30",
+        "descricao": "Dashboards interativos, limpeza de dados e criação de relatórios profissionais."
+    }
+]

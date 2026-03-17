@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- Importa o CSS específico da página de login -->
+    <link rel="stylesheet" href="/static/style_cadatro.css">
+</head>
+
+<body>
+
+    <!-- Cabeçalho fixo com o título do sistema -->
+    <header><h1>GERENCIAMENTO DE AULAS</h1></header>
+    
+    <!-- Caixa central do formulário de login -->
+    <div class="login-box">
+
+        <!-- Título dentro da caixa -->
+        <h2 class="titulo-login">Login</h2>
+
+        <!-- Formulário que envia os dados para /login via POST -->
+        <form method="post" action="/login">
+
+            <!-- Campo de usuário -->
+            <label for="usuario">Usuário</label>
+            <input 
+                type="text"
+                id="usuario"
+                name="usuario"
+                placeholder="Informe seu nome de usuário"
+                autocomplete="usuario"
+                required
+            >
+
+            <!-- Campo de senha -->
+            <label for="senha">Senha</label>
+            <input 
+                type="password"
+                id="senha"
+                name="senha"
+                placeholder="Informe sua senha"
+                autocomplete="current-password"
+                required
+            >
+
+            <!-- Exibe mensagem de erro caso exista (Flask) -->
+            {% if erro %}
+                <p style="color:red; text-align:center; margin-bottom:10px;">{{ erro }}</p>
+            {% endif %}
+
+            <!-- Botão para enviar o formulário -->
+            <button class="btn_entrar" type="submit">Entrar</button>
+
+        </form>
+
+        <!-- Rodapé com link para a página de cadastro -->
+        <footer class="footer-login">
+            <p>Ainda não tem conta?
+                <a href="/cadastro">Cadastre-se</a>
+            </p>
+        </footer>
+
+    </div>
+</body>
+</html>

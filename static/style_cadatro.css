@@ -1,0 +1,102 @@
+/* Estilos gerais da página */
+html, body {
+    background: linear-gradient(#001f3f, #02416b);
+    font-family: 'Segoe UI', Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Título principal do topo */
+header h1 {
+    color: #e4dfda;
+    font-size: 45px;
+    text-align: center;
+    padding: 5rem;
+}
+
+/* Caixa do formulário de login */
+.login-box {
+    width: 450px;
+    height: 400px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    background: #e4dfda;
+    margin: 50px auto;
+}
+
+/* Título interno do formulário */
+.titulo-login {
+    text-align: center;
+    color: #2274a5;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Inputs de e-mail e senha */
+input {
+    font-size: large;
+    background-color: white;
+    width: 95%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+/* Botão de entrar */
+.btn_entrar {
+    background-color: #2274a5;
+    color: rgb(255, 255, 255);
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+    transition: 0.5s;
+}
+
+/* Hover do botão de entrar */
+.btn_entrar:hover {
+    background-color: #1d638c;
+}
+
+/* Rodapé do formulário */
+.footer-login {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.footer-login p {
+    padding: 0;
+}
+
+/* Link "Cadastre-se" */
+.footer-login a {
+    color: #482c1f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Hover do link */
+.footer-login a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 600px) {
+  .login-box {
+    width: 70%;
+    height: 45%;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    background: #e4dfda;
+    margin: 50px auto;
+    }
+}

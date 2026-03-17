@@ -1,0 +1,483 @@
+:root {
+    --primary-color: #2274a5;     /* Cor principal */
+    --secondary-color: #005aa5;   /* Cor secundária */
+    --third-color: #e4dfda;       /* Cor terciária */
+
+    --box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    --hover: #023a68;             /* Cor hover */
+}
+
+/* CONFIG GERAL */
+body{
+    font-family: Arial, sans-serif;
+    background-color: #ece5df;
+    margin: 0;
+    padding: 0;
+}
+
+/* CONTAINER PRINCIPAL */
+.meu_container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    display: block;
+}
+
+/* CARD DAS AULAS */
+.meu_card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+
+    padding: 14px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Ajuste de espaçamento de texto dentro do card */
+.meu_card p, 
+.meu_card h3 {
+    margin: 4px 0;
+}
+
+/* Botão X dentro do card */
+.meu_card .close-button {
+    color: #aaa;
+    font-size: 38px;
+    font-weight: bold;
+    cursor: pointer;
+    float: right;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+.meu_card .close-button:hover {
+    color: #000;
+    transform: scale(1.25);
+}
+
+/* MODAL - fundo */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 50; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: transparent;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+}
+
+/* X do modal */
+.modal .close-button {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 40px;
+    color: #555;
+    cursor: pointer;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+.modal .close-button:hover {
+    color: black;
+    transform: scale(1.2);
+}
+
+/* CAIXA DO MODAL */
+.modal-content {
+    background-color: white;
+    max-width: 900px;
+    width: 60%;
+    padding: 25px;
+
+    margin: 10% auto; 
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+/* FORM DENTRO DO MODAL */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* LABELS DO FORM */
+.modal-content form label {
+    margin-top: 6px;   
+    font-weight: bold;
+}
+
+/* INPUTS E TEXTAREA DO MODAL */
+.modal-content form input,
+.modal-content form textarea {
+    margin-top: 3px;
+    padding: 6px;
+    border-radius: 5px;
+    border: 2px solid #7aa7cc;
+    font-size: 16px;
+    background-color: #e7f0fa;
+    transition: 0.2s;
+}
+
+/* FOCUS NOS INPUTS */
+.modal-content form input:focus,
+.modal-content form textarea:focus {
+    border-color: #005aa5;
+    background-color: #dce8f7;
+    outline: none;
+}
+
+/* BOTÃO SALVAR DO MODAL */
+.modal-content form button {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #ece5df;
+    background-color: var(--secondary-color);
+
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.modal-content form button:hover{
+    background-color: var(--primary-color);
+    transform: scale(1.02);
+}
+
+/* CONTAINER DO BOTÃO NOVA AULA */
+.container.nova_aula{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/* BOTÃO NOVA AULA */
+.btn-nova {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-left: auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+.linha-botao {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; 
+}
+
+/* Hover do botão nova aula */
+button#btn-nova-aula:hover {
+    background-color: var(--hover);
+    transform: scale(1.1);
+}
+
+/* BOTÃO DETALHES */
+.meu_card .btn-detalhes{
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out;
+}
+button.btn-detalhes:hover {
+    background-color: var(--hover);
+    transform: scale(1.1);
+}
+
+/* NAVBAR */
+.custom-navbar {
+    background-color: var(--primary-color);
+    padding: 12px 25px;
+    box-shadow: var(--box-shadow);
+}
+
+/* Ajuste de alinhamento da navbar */
+.custom-navbar .container-fluid { 
+    display: flex !important; 
+    justify-content: space-between !important; 
+    align-items: center !important; 
+    width: 100%;
+}
+
+/* Título da navbar */
+.custom-navbar .navbar-brand{
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: white;
+    white-space: normal !important; /* permite quebrar */
+    max-width: 70%; /* impede que encoste no botão */
+    cursor: default;
+}
+
+/* Links da navbar */
+.custom-navbar .nav-link {
+    font-size: 20px; 
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+.custom-navbar .nav-link:hover {
+    color: #29292b
+}
+
+/* ÍCONE DO MENU MOBILE */
+.custom-toggler {
+    border: none;
+}
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='3' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* =================== */
+/* BOTÕES EDITAR/EXCLUIR */
+/* =================== */
+
+/* Container dos botões */
+.btn-container {
+    display: flex;
+    align-items: baseline;
+    margin-top: 25px;
+    gap: 20px;
+    line-height: 0;
+}
+
+/* Base dos dois botões */
+.btn-acao { 
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease-in-out;
+    width: 160px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    padding: 0;
+    display: block; 
+}
+
+/* Botão Editar */
+.btn-editar {
+    background-color: #4b4b4b !important;
+    color: white !important;
+}
+.btn-editar:hover {
+    background-color: #333 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Botão Excluir */
+.btn-excluir {
+    background-color: #c62828 !important;
+    color: white !important;
+}
+.btn-excluir:hover {
+    background-color: #b71c1c !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Remove blur de botões */
+button,
+button[class^="btn-"],
+.btn-acao,
+.btn-nova,
+.btn-detalhes,
+.btn-excluir,
+.btn-editar {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+}
+
+/* Prioridade sobre bootstrap */
+button.btn.btn-danger.btn-excluir,
+button.btn-excluir.btn.btn-danger,
+button.btn-excluir.btn {
+    background-color: #bd221d ;
+    color: #fff ;
+}
+
+/* Focus */
+form button.btn-excluir:focus,
+.btn-excluir:focus {
+    outline: none ;
+    box-shadow: none ;
+    color: #fff ;
+}
+
+/* =================== */
+/* MOBILE */
+/* =================== */
+
+@media (max-width: 900px) {
+
+    .meu_card {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+
+  .meu_card p,
+  .meu_card h3 {
+    margin: 4px 0;
+    font-size: 0.95rem;
+  }
+
+  .modal-content {
+        width: 90% ;
+        max-width: none ;
+        padding: 18px ;
+        height: 65%;
+    }
+
+  .modal-content form label {
+    margin-top: 8px;
+    font-size: 1rem;
+  }
+
+  .modal-content form input,
+  .modal-content form textarea {
+    margin-top: 4px;
+    padding: 6px;
+    font-size: 1rem;
+  }
+
+  .modal-new{
+    height: 88% ;
+    }
+
+  .btn-container {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+  }
+
+  .btn-editar,
+  .btn-excluir {
+    width: 60% !important;
+    max-width: none;
+  }
+
+  .btn-excluir,
+  .btn-excluir:hover,
+  .btn-excluir:focus {
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  .btn-detalhes {
+    font-size: 14px;
+    padding: 8px 10px;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+    .btn-wrapper{
+    width: 100%; 
+    max-width: 250px; 
+    }
+
+    .btn-editar,
+    .btn-excluir {
+        width: 100% !important;
+        max-width: none;
+    }
+
+    #navbarConteudo {
+        padding: 0 !important;
+    }
+    
+    .custom-navbar .container-fluid {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .navbar-brand {
+        flex-shrink: 1;
+    }
+
+    .navbar-toggler {
+        margin-left: auto !important;
+    }
+
+    .navbar-brand {
+        flex-shrink: 1;
+        max-width: 70%; /* garante quebra no mobile também */
+        white-space: normal !important; 
+        cursor: auto;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end !important;
+        margin-left: auto !important;
+        padding: 0 !important; /* remove espaço extra */
+    }
+
+    .navbar-nav .nav-item {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .navbar-nav .nav-link {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+}
+
+/* Wrapper dos botões */
+.btn-container .btn-wrapper {
+    height: 46px; 
+    margin: 0;
+    padding: 0;
+    vertical-align: middle; 
+}
+
+/* Wrapper do formulário (excluir) */
+.btn-container form.btn-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block;
+}
+
+/* Garante line-height igual entre os botões */
+.btn-editar,
+.btn-excluir {
+    line-height: 46px !important;
+    padding: 0 !important;
+}

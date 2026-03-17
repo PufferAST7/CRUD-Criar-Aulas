@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Criadores{% endblock %}
+
+{% block head_extras %}
+<!-- CSS específico da página dos criadores -->
+<link rel="stylesheet" href="{{ url_for('static', filename='criadores.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Container principal que agrupa todos os cards dos criadores -->
+<div class="criadores-container">
+
+    <!-- ======== CARD DO LUCAS ======== -->
+    <div class="criador-card">
+
+        <!-- Foto do criador -->
+        <img src="/static/imagem_lucas.jpg" alt="Lucas Martins">
+
+        <!-- Nome do criador -->
+        <figcaption>Lucas Martins</figcaption>
+
+        <!-- Caixa de texto expansível com a descrição -->
+        <div class="text-box">
+            Olá! Meu nome é Lucas Martins Bichara e participei ativamente do desenvolvimento do sistema de Gerenciamento de Aulas Práticas.
+            Sou apaixonado por programação e gosto de transformar ideias em algo funcional e organizado. No projeto, trabalhei em várias partes — desde a estrutura em HTML, passando pela lógica em Python, até o visual em CSS. Embora tenha usado JavaScript em menor escala, contribuí também para integrar algumas funcionalidades importantes.
+        </div>
+
+        <!-- Botão + que expande e recolhe o texto -->
+        <button class="toggle-btn"> + </button>
+    </div>
+
+    <!-- ======== CARD DO MARCO ======== -->
+    <div class="criador-card">
+
+        <!-- Foto do criador -->
+        <img src="/static/imagem_marco.jpg" alt="Marco Antônio">
+
+        <!-- Nome do criador -->
+        <figcaption>Marco Antônio</figcaption>
+
+        <!-- Caixa de texto expansível com a descrição -->
+        <div class="text-box">
+            Olá! Meu nome é Marco Antônio de Senna Titon e fui um dos desenvolvedores principais responsável pela concepção e implementação deste sistema de Gerenciamento de Aulas Práticas.
+            Minha paixão por Programação me motivou a criar uma solução eficiente e intuitiva para organizar horários e informações de aulas. Tenho experiência em HTML, CSS, JavaScript, Python, Bootstrap, garantindo que o sistema seja robusto, seguro e responsivo em qualquer dispositivo.
+        </div>
+
+        <!-- Botão de expansão do texto -->
+        <button class="toggle-btn"> + </button>
+    </div>
+
+</div>
+
+<!-- Script responsável por controlar o abrir/fechar do texto -->
+<script>
+const buttons = document.querySelectorAll('.toggle-btn');
+const boxes = document.querySelectorAll('.text-box');
+
+buttons.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        // Alterna rotação e estilo do botão
+        btn.classList.toggle('active');
+
+        // Alterna a visibilidade da caixa de texto correspondente
+        boxes[index].classList.toggle('visible');
+    });
+});
+</script>
+{% endblock %}

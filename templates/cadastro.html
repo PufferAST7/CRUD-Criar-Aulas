@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da página de cadastro -->
+    <title>Cadastro</title>
+
+    <!-- CSS específico desta página -->
+    <link rel="stylesheet" href="/static/style_cadatro.css">
+</head>
+
+<body>
+
+    <!-- Cabeçalho simples com o título do sistema -->
+    <header>
+        <h1>GERENCIAMENTO DE AULAS</h1>
+    </header>
+    
+    <!-- Caixa central onde fica o formulário -->
+    <div class="login-box">
+
+        <!-- Título do formulário -->
+        <h2 class="titulo-login">Cadastro</h2>
+
+        <!-- Formulário de criação de conta -->
+        <form method="post" action="/cadastro">
+
+            <!-- Campo de usuário -->
+            <label for="usuario">Usuário</label>
+            <input type="text" id="usuario" name="usuario" placeholder="Informe seu usuário" required>
+
+            <!-- Campo de senha -->
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" placeholder="Informe sua senha" required>
+            
+            <!-- Exibe mensagem de erro caso exista (Flask) -->
+            {% if erro %}
+                <p style="color:red; text-align:center; margin-bottom:10px;">{{ erro }}</p>
+            {% endif %}
+
+            <!-- Botão principal -->
+            <button class="btn_entrar" type="submit">Cadastrar</button>
+        </form>
+
+        <!-- Área com link alternativo para login -->
+        <footer class="footer-login">
+            <p>Já tem conta? <a href="/login">Login</a></p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

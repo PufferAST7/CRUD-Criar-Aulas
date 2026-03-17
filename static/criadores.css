@@ -1,0 +1,118 @@
+/* Imagem principal dos criadores */
+img{
+    margin: 150px auto 0 auto;
+    display: block;
+    width: 20rem;
+    border-radius: 50px;
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.268);
+}
+
+/* Container que centraliza o conteúdo dos criadores */
+.criadores-container {
+    text-align: center;
+}
+
+/* Página geral dos criadores */
+.pagina-criadores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+    padding-top: 200px;
+}
+
+/* Legenda / nome abaixo da imagem */
+figcaption{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    color: #e4dfda;
+    letter-spacing: 1px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+/* Estilos gerais da página */
+body {
+    margin: 0;
+    background: linear-gradient(#001f3f, #02416b);
+    font-family: sans-serif;
+}
+
+/* Centralização auxiliar */
+.container {
+    text-align: center;
+}
+
+/* Botão redondo de + que abre o texto */
+.toggle-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+    margin-bottom: 80px;
+
+    background-color: #56392c;
+    color: #e4dfda;
+    border: none;
+
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+    font-size: 38px;
+    cursor: pointer;
+
+    transition: 0.4s ease;
+}
+
+/* Hover do botão */
+.toggle-btn:hover {
+    background-color: #482c1f;
+}
+
+/* Animação quando o botão ativa (vira X) */
+.toggle-btn.active {
+    transform: rotate(135deg);
+    background-color: transparent;
+}
+
+/* Caixa de texto animada que expande suavemente */
+.text-box {
+    background: #0684ce;
+    border: 1px solid #0684ce;
+    border-radius: 10px;
+
+    font-size: 21px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #e4dfda;
+
+    width: 100%;
+    max-width: 90vw;
+
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    padding: 0 2rem;
+    margin: 0 auto;
+
+    transition:
+        max-height 1.2s ease,
+        opacity 0.6s ease,
+        box-shadow 0.6s ease,
+        padding 0.6s ease;
+}
+
+/* Quando o texto é exibido */
+.text-box.visible {
+    max-height: 1000px;
+    opacity: 1;
+    padding: 2rem 2rem;
+    box-shadow: -10px -5px 15px rgba(0, 0, 0, 0.197);
+}
