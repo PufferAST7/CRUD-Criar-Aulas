@@ -1,3 +1,7 @@
+# Ignora o CSS e o HTML da contagem de linguagens
 *.css linguist-vendored=true
 *.html linguist-vendored=true
+
+# Força o GitHub a tratar arquivos específicos como Python
+# (Substitua 'main.py' pelo nome do seu arquivo principal, se for diferente)
 main.py linguist-language=Python
