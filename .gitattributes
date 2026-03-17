@@ -1,3 +1,3 @@
-*.css linguist-detectable=false
-*.html linguist-documentation=false
-nome_do_arquivo_principal.js linguist-language=JavaScript
+*.css linguist-vendored=true
+*.html linguist-vendored=true
+main.py linguist-language=Python
